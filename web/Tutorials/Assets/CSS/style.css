@@ -91,14 +91,14 @@ figure{
 
 @media screen and (max-width: 768px)
 {
-    #titel{
+    .logo{
         font-size: 30px;
     }
 }
 
 @media screen and (max-width: 480px)
 {
-    #titel{
+    .logo{
         display: none;
     }
     nav {
