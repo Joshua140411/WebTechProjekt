@@ -7,7 +7,7 @@ input:invalid {
     border-bottom-color: red;
 }
 
-.required input+span::after, .required select+span::after {
+input:required+span::after, .required select+span::after {
     content: "(Erforderliches Feld)";
     padding-left: 10px;
 }
