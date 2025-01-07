@@ -6,8 +6,7 @@
     "main aside"
     "footer footer";
     grid-template-rows: auto auto 1fr auto;
-    grid-template-columns: 2fr 1fr;
-    
+    grid-template-columns: 1.54fr 1fr;
     height: 100vh;
 }
 
