@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="Assets/CSS/forms.css">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/grid.css">
     <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+
+    <script language="JavaScript" type="text/javascript" src="Assets/JS/form.js"></script>
+    <script language="JavaScript" type="text/javascript" src="Assets/JS/script.js"></script>
 </head>
 <body>
   <div class="grid-container">
@@ -15,14 +18,22 @@
         <img class="logo" src="./Assets/Images/Logo.png" alt="Logo" height="75" width="75">
         <h1>TITEL DER SEITE</h1>
     </header>
-    <nav>
-        <a href="list.html">Liste aller Tutorials</a> <span class="spaceholder">|</span>
-        <a href="MatheTutorials.html">Tutorials zum Thema Mathe</a> <span class="spaceholder">|</span>
-        <a href="Mathe/Mathe1Tutorial1.html">Mathe Tutorial 1</a> <span class="spaceholder">|</span>
-        <a href="form.html">Neues Tutorial anlegen</a>
+
+      <nav class="navContainer">
+          <div class="container">
+            <div class="burger"></div>
+            <div class="burger"></div>
+            <div class="burger"></div>
+          </div>
+          <div>
+            <a href="list.html">Liste aller Tutorials</a> <span class="spaceholder">|</span>
+            <a href="MatheTutorials.html">Tutorials zum Thema Mathe</a> <span class="spaceholder">|</span>
+            <a href="Mathe/Mathe1Tutorial1.html">Mathe Tutorial 1</a> <span class="spaceholder">|</span>
+            <a href="form.html">Neues Tutorial anlegen</a>
+          </div>
     </nav>
 
-    <form action="https://labs.inf.fh-dortmund.de/tutorialService/testCreateTutorial.php" method="post">
+    <form action="https://labs.inf.fh-dortmund.de/tutorialService/testCreateTutorial.php" method="post" id="mainForm">
         <fieldset>
             <legend>Tutorial Informationen</legend>
             <p class="required">
@@ -54,7 +65,7 @@
             <legend>Zeitliche Rahmenbedingungen</legend>
             <p class="required">
                 <label for="duration">Dauer des Tutorials:
-                    <input type="time" min="00:20" max="15:59" name="duration" required> Minuten (Mindestens 20
+                    <input id="duration" type="time" min="00:20" max="15:59" name="duration" required> Minuten (Mindestens 20
                     Sekunden, Maximal 15:59 Minuten)<span></span></label>
             </p>
             <p class="required">
@@ -63,13 +74,15 @@
             <p>
                 <label for="type">Inhalt:</label>
             <p class="required">
-                <input type="radio" name="type" value="link">Video<br>
-                <input type="radio" name="type" value="text">Text<br>
+                <input id="videoSelection" type="radio" name="type" value="video" required>Video<span></span><br>
+                <input id="textSelection" type="radio" name="type" value="text" required>Text<span></span><br>
                 <br>
-                <input required type="url" name="content" size="50" placeholder="URL zu der Ressource"><span></span>
             </p>
-            </p>
-            <input type="submit">
+
+            <label for="content">Inhalt:</label>
+            <div id="contentContainer"></div>
+
+            <button type="submit">Absenden</button>
         </fieldset>
     </form>
 

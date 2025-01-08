@@ -4,21 +4,31 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tutorials</title>
+
         <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
         <link rel="stylesheet" type="text/css" href="Assets/CSS/tiles.css">
         <link rel="stylesheet" type="text/css" href="Assets/CSS/flexbox.css">
-        <script language="javascript" type="text/javascript" src="Assets/JS/script.js"></script>
+
+        <script language="JavaScript" type="text/javascript" src="Assets/JS/script.js"></script>
+        <script language="JavaScript" type="text/javascript" src="Assets/JS/burgermenu.js"></script>
     </head>
     <body>
         <header>
             <img class="logo" src="./Assets/Images/Logo.png" alt="Logo" height="75" width="75">
             <h1>TITEL DER SEITE</h1>
         </header>
-        <nav>
-            <a href="list.html">Liste aller Tutorials</a> <span class="spaceholder">|</span> 
-            <a href="MatheTutorials.html">Tutorials zum Thema Mathe</a> <span class="spaceholder">|</span>
-            <a href="Mathe/Mathe1Tutorial1.html">Mathe Tutorial 1</a> <span class="spaceholder">|</span>
-            <a href="form.html">Neues Tutorial anlegen</a>
+        <nav class="navContainer">
+            <div class="container">
+                <div class="burger"></div>
+                <div class="burger"></div>
+                <div class="burger"></div>
+            </div>
+            <div>
+                <a class="link" href="list.html">Liste aller Tutorials</a> <span class="spaceholder">|</span>
+                <a class="link" href="MatheTutorials.html">Tutorials zum Thema Mathe</a> <span class="spaceholder">|</span>
+                <a class="link" href="Mathe/Mathe1Tutorial1.html">Mathe Tutorial 1</a> <span class="spaceholder">|</span>
+                <a class="link" href="form.html">Neues Tutorial anlegen</a>
+            </div>
         </nav>
 
         <div id="container">
