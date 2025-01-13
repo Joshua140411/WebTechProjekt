@@ -1,20 +1,16 @@
-// index.js
-
 const http = require("http");
 const url = require("url");
 const { tutorials, getTutorialsZuKategorie } = require("./models/persistence.js");
-
 const hostname = "localhost";
 const port = 8844;
 
-// Funktion, um HTML für Suchergebnisse zu generieren
 function generateHTML(title, results) {
     const listItems = results.map(item => `<li>${item.name}</li>`).join("");
     const content = results.length > 0
         ? `<h1>Tutorials mit: ${title}</h1><ul>${listItems}</ul>`
         : `<h1>Keine Tutorials gefunden für: ${title}</h1>`;
-
     return `
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -35,19 +31,15 @@ function generateHTML(title, results) {
     </html>`;
 }
 
-// Server erstellen
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
     const query = parsedUrl.query;
     const searchTerm = query.q;
 
     if (parsedUrl.pathname === "/search" && searchTerm) {
-        // Tutorials nach Suchbegriff filtern
         const results = tutorials.filter(tutorial =>
             tutorial.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
-
-        // HTML-Seite mit Suchergebnissen generieren
         const html = generateHTML(searchTerm, results);
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/html");
@@ -59,7 +51,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-// Server starten
 server.listen(port, hostname, () => {
     console.log(`Server läuft unter http://${hostname}:${port}/`);
 });

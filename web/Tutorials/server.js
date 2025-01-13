@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const port = 8844;
 const url = require("url");
-
-// Beispiel-Daten für Tutorials
 const tutorials = [
   { title: 'Node.js - Einführung', description: 'Lerne Node.js von Grund auf.' },
   { title: 'Mathematik Grundlagen', description: 'Einführung in die Mathematik.' },
@@ -11,23 +9,19 @@ const tutorials = [
   { title: 'Fortgeschrittene Mathematik', description: 'Tiefgehende mathematische Konzepte.' },
 ];
 
-// Middleware um die Daten zu parsen
 app.use(express.urlencoded({ extended: true }));
-
-// Route für die Suche
 app.get('/search', (req, res) => {
-  // Extrahiere den Suchbegriff aus der URL (query-Parameter)
+
   const queryParams = url.parse(req.url, true).query;
-  const searchTerm = queryParams.q || ''; // Falls kein Suchbegriff eingegeben wurde, setze ihn auf ein leeres String
+  const searchTerm = queryParams.q || '';
   
-  console.log("Suchbegriff:", searchTerm);  // Hier kannst du den Suchbegriff zur Kontrolle ausgeben
+  console.log("Suchbegriff:", searchTerm);
   
-  // Filtere die Tutorials basierend auf dem Suchbegriff
+
   const filteredTutorials = tutorials.filter(tutorial =>
     tutorial.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
-  // Erstelle die HTML-Seite mit den Suchergebnissen
+
   let resultHTML = `
     <!DOCTYPE html>
     <html lang="de">
@@ -44,7 +38,6 @@ app.get('/search', (req, res) => {
       <main>
   `;
 
-  // Wenn Treffer gefunden wurden
   if (filteredTutorials.length > 0) {
     resultHTML += '<ul>';
     filteredTutorials.forEach(tutorial => {
@@ -64,11 +57,9 @@ app.get('/search', (req, res) => {
     </html>
   `;
 
-  // Gib die HTML-Seite zurück
   res.send(resultHTML);
 });
 
-// Server starten
 app.listen(port, () => {
   console.log(`Server läuft auf http://localhost:${port}`);
 });
