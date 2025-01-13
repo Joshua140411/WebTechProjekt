@@ -7,35 +7,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="Assets/CSS/grid.css">
-    <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
-    <script language="JavaScript" type="text/javascript" src="Assets/JS/script.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/script.js"></script>
   </head>
   
   <body>
-  <div  class="grid-container">
-      <header>
-        <img class="logo" src="./Assets/Images/Logo.png" alt="Logo" height="75" width="75">
-        <h1>TITEL DER SEITE</h1>
-      </header>
-      <nav class="navContainer">
-        <div class="container">
-          <div class="burger"></div>
-          <div class="burger"></div>
-          <div class="burger"></div>
-        </div>
-        <div>
-          <a href="list.html">Liste aller Tutorials</a> <span class="spaceholder">|</span>
-          <a href="MatheTutorials.html">Tutorials zum Thema Mathe</a> <span class="spaceholder">|</span>
-          <a href="Mathe/Mathe1Tutorial1.html">Mathe Tutorial 1</a> <span class="spaceholder">|</span>
-          <a href="form.html">Neues Tutorial anlegen</a>
-        </div>
-    </nav>
+    <%- include('partials/header') %>
+
+    <div  class="grid-container">
     <main>
       <section>    <dl>
       <figure>
-        <img src="./Assets/Images/MathLogo.png" alt="Tutorial 1 Logo" height="75" width="75">
+        <img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="75" width="75">
       </figure>
         <dt><strong>Mathe Tutorial 1</strong></dt>
         <dd>
@@ -51,7 +36,7 @@
     <section>
       <dl>
         <figure>
-          <img src="./Assets/Images/MathLogo.png" alt="Tutorial 1 Logo" height="75" width="75">
+          <img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="75" width="75">
         </figure>
         <dt><strong>Mathe Tutorial 2</strong></dt>
         <dd>
@@ -65,16 +50,9 @@
       </dl>
     </section>
     </main>
-      <aside>
-        <h2>Neue Tutorials</h2>
-        <ul>
-            <li>Node.js - Schnelleinstieg, 15.10.2024 - Dauer:1 Std. 5 Min.</li>
-            <li>Analysis 2, 15.10.2024 - Dauer:3 Std. 15 Min.</li>
-            <li>C++ for Dummies, 14.10.2024 - Dauer:2 Std. 3 Min.</li>
-        </ul>
-      </aside>
+      <%- include('partials/aside') %>
 
-      <footer>&copy;Entwickelt für WebTech</footer>
+      <%- include('partials/footer') %>
   </div>
   </body>
   

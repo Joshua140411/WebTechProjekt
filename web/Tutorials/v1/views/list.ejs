@@ -13,23 +13,7 @@
         <script language="JavaScript" type="text/javascript" src="/js/burgermenu.js"></script>
     </head>
     <body>
-        <header>
-            <img class="logo" src="/img/Logo.png" alt="Logo" height="75" width="75">
-            <h1>TITEL DER SEITE</h1>
-        </header>
-        <nav class="navContainer">
-            <div class="container">
-                <div class="burger"></div>
-                <div class="burger"></div>
-                <div class="burger"></div>
-            </div>
-            <div>
-                <a class="link" href="list.html">Liste aller Tutorials</a> <span class="spaceholder">|</span>
-                <a class="link" href="MatheTutorials.html">Tutorials zum Thema Mathe</a> <span class="spaceholder">|</span>
-                <a class="link" href="Mathe/Mathe1Tutorial1.html">Mathe Tutorial 1</a> <span class="spaceholder">|</span>
-                <a class="link" href="form.html">Neues Tutorial anlegen</a>
-            </div>
-        </nav>
+        <%- include('partials/header') %>
 
         <div id="container">
             <main>
@@ -44,37 +28,28 @@
                     </fieldset>
                 </form>
 
-            <ol id="tiles">
-                <li class="tile">
-                    <a href="./MatheTutorials.html"><img src="/img/WebLogo.jpg" alt="Tutorial 1 Logo" height="50" width="50">Webkurs</a>
-                </li>
-                <li class="tile">
-                    <a href="./MatheTutorials.html"><img src="/img/PKLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Programmierkurs</a>
-                </li>
-                <li class="tile">
-                    <a href="./MatheTutorials.html"><img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Mathe</a>
-                </li>
-                <li class="tile">
-                    <a href="./MatheTutorials.html"><img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Programmierkurs</a>
-                </li>
-            </ol>
-        </main>
+                <ol id="tiles">
+                    <li class="tile">
+                        <a href="./MatheTutorials.html"><img src="/img/WebLogo.jpg" alt="Tutorial 1 Logo" height="50" width="50">Webkurs</a>
+                    </li>
+                    <li class="tile">
+                        <a href="./MatheTutorials.html"><img src="/img/PKLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Programmierkurs</a>
+                    </li>
+                    <li class="tile">
+                        <a href="./MatheTutorials.html"><img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Mathe</a>
+                    </li>
+                    <li class="tile">
+                        <a href="./MatheTutorials.html"><img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Programmierkurs</a>
+                    </li>
+                </ol>
+            </main>
 
-            <aside>
-                <h2>Neue Tutorials</h2>
-                <ul>
-                    <li>Node.js - Schnelleinstieg, 15.10.2024 - Dauer:1 Std. 5 Min.</li>
-                    <li>Analysis 2, 15.10.2024 - Dauer:3 Std. 15 Min.</li>
-                    <li>C++ for Dummies, 14.10.2024 - Dauer:2 Std. 3 Min.</li>
-                </ul>
-            </aside>
+            <%- include('partials/aside') %>
         </div>
 
         <button onclick="consoleMessage()">Viewport-Breite</button>
               <div id="my-div"></div>
 
-        <footer>
-            <label>&copy;Entwickelt für WebTech</label>
-        </footer>
+        <%- include('partials/footer') %>
     </body>
 </html>

@@ -62,7 +62,7 @@ function getTutorialsZuKategorie(kategorieName, tutorials) {
   return tutorials.filter(tut => tut.kategorien.some(kat => kat.name === kategorieName));
 }
 
-const kategorie1 = new Kategorie("Web-Engineering", new Bild("Bild der Kategorie Web-Engineering", "web-eng.jpg"));
+const kategorie1 = new Kategorie("Mathe", new Bild("Bild der Kategorie Mathe", "mathe.jpg"));
 const kategorie2 = new Kategorie("Programmierung", new Bild("Bild der Kategorie Programmierung", "prog.jpg"));
 const kategorie3 = new Kategorie("Datenbanken", new Bild("Bild der Kategorie Datenbanken", "db.jpg"));
 const kategorie4 = new Kategorie("Frontend-Design", new Bild("Bild der Kategorie Frontend-Design", "frontend.jpg"));
@@ -74,7 +74,7 @@ const kapitel1 = new Kapitel("Einleitung", "Einleitende Worte zum Thema", "00:10
 const kapitel2 = new Kapitel("Hello World!", "Erstes Testprogramm", "00:20");
 const kapitel3 = new Kapitel("Modulsystem", "Erörterung des Modulsystems", "00:30");
 
-const tutorial1 = new Tutorial("Node.js - Der schnelle Einstieg", "DE", "Node.js ist ein JavaScript-Framework ...", new Date(2012, 8, 28), "<iframe ...>");
+const tutorial1 = new Tutorial("Binomische Formeln", "DE", "Vertiefung des Themas Binomische Formeln", new Date(2012, 8, 28), "<iframe ...>");
 tutorial1.fuegeKapitelHinzu(kapitel1);
 tutorial1.fuegeKapitelHinzu(kapitel2);
 tutorial1.fuegeKapitelHinzu(kapitel3);

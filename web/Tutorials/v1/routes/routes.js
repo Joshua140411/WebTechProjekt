@@ -4,6 +4,7 @@ const http = require("http");
 const { kategorien } = require("../models/persistence");
 const { tutorials } = require("../models/persistence");
 const db = require("../models/persistence");
+const e = require("express");
 
 router.get("/", function (req, res) {
   res.render("list",{
@@ -18,20 +19,24 @@ router.get("/list.html", function (req, res) {
 });
 
 router.get("/MatheTutorials.html", function (req, res) {
-  let kat = req.query.category;
-  let categoryName = kat.name;
-  let filteredTutorials = getTutorialsZuKategorie(categoryName, db.tutorials);
-  res.render("MatheTutorials", {
-    tutorials: filteredTutorials,
-    category: categoryName
-  });
+  if (req.query.length != null) {
+    let kat = req.query.category;
+    let categoryName = kat.name;
+    let filteredTutorials = getTutorialsZuKategorie(categoryName, db.tutorials);
+    res.render("MatheTutorials", {
+      tutorials: filteredTutorials,
+      category: categoryName
+    });
+  } else {
+    res.render("MatheTutorials");
+  }
 });
 
 router.get("/Mathe/Mathe1Tutorial1.html", function (req, res) {
   let tutorialName = req.query.name;
   let tutorial = db.tutorials.find(t => t.name === tutorialName);
   if (!tutorial) {
-    //TODO
+    res.render("Mathe1Tutorial1");
   }
   else{
     res.render("Mathe1Tutorial1", {
