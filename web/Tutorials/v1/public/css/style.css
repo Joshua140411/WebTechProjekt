@@ -1,0 +1,146 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #000088;
+}
+
+.burger {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    display: none;
+}
+
+header, nav, main, aside, footer {
+    text-align: center;
+    padding: 1em;
+}
+
+header h1 {
+    margin: 10px;
+}
+aside {
+    background-color: rgb(209, 255, 255);
+}
+
+nav a:hover{
+    background-color: rgb(194, 194, 194);
+}
+
+table {
+    justify-self: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #aafab7;
+}
+table thead {
+    background-color: #ffb3b3;
+
+}
+
+table tfoot {
+    background-color: #fda5a5;
+
+}
+
+nav{
+    padding: 3px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #ddddde;
+}
+
+nav a {
+    padding: 3px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer{
+    text-align: center;
+    background-color: azure;
+    border-radius: 5px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll; 
+    margin-bottom: 10px;
+}
+
+header img{
+    display: inline-block;
+}
+
+header h1{
+    font-size: 50px;
+    display: inline-block;
+}
+
+section figure{
+    float: left;
+}
+
+figure{
+    float: right;
+}
+
+.informationen {
+    float: left;
+     width: 50%;
+}
+
+@media screen and (max-width: 768px)
+{
+    .logo{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px)
+{
+    .logo{
+        display: none;
+    }
+    .navContainer {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    .container {
+        margin-right: 20px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #ddddde;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .container:hover {
+        background-color: #007bff;
+    }
+    .burger {
+        display: flex;
+    }
+    .link {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        visibility: collapse;
+    }
+    .spaceholder {
+        display: none;
+    }
+}
