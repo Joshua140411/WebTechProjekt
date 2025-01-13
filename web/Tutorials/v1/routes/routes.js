@@ -21,7 +21,7 @@ router.get("/tutorials", function (req, res) {
   // (Kategorie als Anfrage/Query-Parameter gegeben,
   // Zugriff erfolgt mit: req.query.category)
   let kat = req.query.category;
-  let categoryName = db.kat.name;
+  let categoryName = kat.name;
   let filteredTutorials = getTutorialsZuKategorie(categoryName, db.tutorials);
   res.render("tutorials", {
     tutorials: filteredTutorials, // Pass the filtered tutorials to the view
