@@ -29,20 +29,6 @@
                 </form>
 
                 <ol id="tiles">
-                    <!--
-                    <li class="tile">
-                        <a href="./MatheTutorials.html"><img src="/img/WebLogo.jpg" alt="Tutorial 1 Logo" height="50" width="50">Webkurs</a>
-                    </li>
-                    <li class="tile">
-                        <a href="./MatheTutorials.html"><img src="/img/PKLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Programmierkurs</a>
-                    </li>
-                    <li class="tile">
-                        <a href="./MatheTutorials.html"><img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Mathe</a>
-                    </li>
-                    <li class="tile">
-                        <a href="./MatheTutorials.html"><img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="50" width="50">Programmierkurs</a>
-                    </li>
-                    -->
                     <% kategorien.forEach(kategorie => { %>
                         <li class="tile">
                             <a href="http://localhost:8020/MatheTutorials.html"><img src="<%= kategorie.bild.url %>" alt="<%= kategorie.bild.name %>" height="50" width="50"><%= kategorie.name %></a>

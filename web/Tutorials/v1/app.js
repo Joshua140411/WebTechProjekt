@@ -8,11 +8,11 @@ app.use(express.static("public"));
 app.use(router);
 
 app.get('*', function(req, res){
-    res.status(404).render("404",{
+    res.status(404).render("Fehlerseite",{
       url: req.url
     });
   });
 
 app.listen(8020, function(){
-    console.log("lausche auf http://localhost:8020")
+    console.log("Server läuft auf: http://localhost:8020")
 });
