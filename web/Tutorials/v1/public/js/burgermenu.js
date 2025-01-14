@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let headers = document.getElementsByTagName("a");
             if(headers.length > 0) {
                 let i = 0;
-                while(i < 4) {
+                while(i < 2) {
                     if (headers[i].style.visibility === "visible") {
                         headers[i].style.visibility = "collapse";
                     } else {
