@@ -62,10 +62,10 @@ function getTutorialsZuKategorie(kategorieName, tutorials) {
   return tutorials.filter(tut => tut.kategorien.some(kat => kat.name === kategorieName));
 }
 
-const kategorie1 = new Kategorie("Mathe", new Bild("Bild der Kategorie Mathe", "mathe.jpg"));
-const kategorie2 = new Kategorie("Programmierung", new Bild("Bild der Kategorie Programmierung", "prog.jpg"));
-const kategorie3 = new Kategorie("Datenbanken", new Bild("Bild der Kategorie Datenbanken", "db.jpg"));
-const kategorie4 = new Kategorie("Frontend-Design", new Bild("Bild der Kategorie Frontend-Design", "frontend.jpg"));
+const kategorie1 = new Kategorie("Mathe", new Bild("Bild der Kategorie Mathe", "/img/MathLogo.png"));
+const kategorie2 = new Kategorie("Programmierung", new Bild("Bild der Kategorie Programmierung", "/img/PKLogo.png"));
+const kategorie3 = new Kategorie("Datenbanken", new Bild("Bild der Kategorie Datenbanken", "/img/databaseLogo.png"));
+const kategorie4 = new Kategorie("Frontend-Design", new Bild("Bild der Kategorie Frontend-Design", "/img/frontendLogo.png"));
 
 const kategorien = [kategorie1, kategorie2, kategorie3, kategorie4];
 sortKategorien(kategorien);
