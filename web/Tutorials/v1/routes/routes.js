@@ -18,7 +18,7 @@ router.get("/list.html", function (req, res) {
   });
 });
 
-router.get("/tutorials", function (req, res) {
+router.get("/MatheTutorials.html", function (req, res) {
   if (req.query.length != null) {
     let kat = req.query.category;
     let categoryName = kat.name;
