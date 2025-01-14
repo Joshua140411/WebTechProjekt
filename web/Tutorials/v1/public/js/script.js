@@ -6,7 +6,6 @@ function getViewportWidth() {
     return window.innerWidth || document.documentElement.clientWidth;
 }
 
-// Define the domain-specific objects
 class Bild {
     constructor(name, url) {
         this.name = name;
@@ -30,15 +29,16 @@ class Kapitel {
 }
 
 class Tutorial {
-    constructor(name, sprache, beschreibung, datum, embedCode) {
+    constructor(name, sprache, beschreibung, datum, embedCode, tutorialUrl) {
         this.name = name;
         this.sprache = sprache;
         this.beschreibung = beschreibung;
-        this.datum = datum; // JavaScript Date object
-        this.embedCode = embedCode; // e.g., iframe or URL
-        this.dauer = "00:00"; // Default duration
-        this.kategorien = []; // Array of Kategorie objects
-        this.kapitelliste = []; // Array of Kapitel objects
+        this.datum = datum;
+        this.embedCode = embedCode;
+        this.dauer = "00:00";
+        this.kategorien = [];
+        this.kapitelliste = [];
+        this.tutorialUrl = tutorialUrl;
     }
 
     fuegeKategorieHinzu(kat) {
@@ -50,23 +50,19 @@ class Tutorial {
     }
 }
 
-// Helper function to convert "HH:MM" to "x Std. y Min."
 function getDauerInStundenUndMinuten(dauer) {
     const [hours, minutes] = dauer.split(":").map(Number);
     return `${hours} Std. ${minutes} Min.`;
 }
 
-// Helper function to sort categories by name
 function sortKategorien(kategorien) {
     kategorien.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// Helper function to filter tutorials by category
 function getTutorialsZuKategorie(kategorieName, tutorials) {
     return tutorials.filter(tut => tut.kategorien.some(kat => kat.name === kategorieName));
 }
 
-// Example Data
 const kategorie1 = new Kategorie("Web-Engineering", new Bild("Bild der Kategorie Web-Engineering", "web-eng.jpg"));
 const kategorie2 = new Kategorie("Programmierung", new Bild("Bild der Kategorie Programmierung", "prog.jpg"));
 const kategorie3 = new Kategorie("Datenbanken", new Bild("Bild der Kategorie Datenbanken", "db.jpg"));
@@ -95,7 +91,6 @@ tutorial2.fuegeKategorieHinzu(kategorie2);
 
 const tutorials = [tutorial1, tutorial2];
 
-// Output all data
 kategorien.forEach(kategorie => {
     console.log(`Kategorie: ${kategorie.name}`);
     console.log(`Bild: ${kategorie.bild.name}`);

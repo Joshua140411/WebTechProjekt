@@ -31,7 +31,10 @@
                 <ol id="tiles">
                     <% kategorien.forEach(kategorie => { %>
                         <li class="tile">
-                            <a href="http://localhost:8020/MatheTutorials.html"><img src="<%= kategorie.bild.url %>" alt="<%= kategorie.bild.name %>" height="50" width="50"><%= kategorie.name %></a>
+                            <a href="http://localhost:8020/MatheTutorials.html/<%= kategorie.name %>">
+                                <img src="<%= kategorie.bild.url %>" alt="<%= kategorie.bild.name %>" height="50" width="50">
+                                <%= kategorie.name %>
+                            </a>
                         </li>
                     <% }) %>
                 </ol>

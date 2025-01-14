@@ -29,7 +29,7 @@ class Kapitel {
 }
 
 class Tutorial {
-  constructor(name, sprache, beschreibung, datum, embedCode) {
+  constructor(name, sprache, beschreibung, datum, embedCode, tutorialUrl, videoUrl) {
       this.name = name;
       this.sprache = sprache;
       this.beschreibung = beschreibung;
@@ -38,6 +38,8 @@ class Tutorial {
       this.dauer = "00:00";
       this.kategorien = [];
       this.kapitelliste = [];
+      this.tutorialUrl = tutorialUrl;
+      this.videoUrl = videoUrl;
   }
 
   fuegeKategorieHinzu(kat) {
@@ -74,7 +76,7 @@ const kapitel1 = new Kapitel("Einleitung", "Einleitende Worte zum Thema", "00:10
 const kapitel2 = new Kapitel("Hello World!", "Erstes Testprogramm", "00:20");
 const kapitel3 = new Kapitel("Modulsystem", "Erörterung des Modulsystems", "00:30");
 
-const tutorial1 = new Tutorial("Binomische Formeln", "DE", "Vertiefung des Themas Binomische Formeln", new Date(2012, 8, 28), "<iframe ...>");
+const tutorial1 = new Tutorial("Binomische Formeln", "DE", "Vertiefung des Themas Binomische Formeln", new Date(2012, 8, 28), "<iframe ...>", "/Mathe/Mathe1Tutorial1.html", "/img/BinomischeFormelnVideo.mp4");
 tutorial1.fuegeKapitelHinzu(kapitel1);
 tutorial1.fuegeKapitelHinzu(kapitel2);
 tutorial1.fuegeKapitelHinzu(kapitel3);
@@ -83,7 +85,7 @@ tutorial1.fuegeKategorieHinzu(kategorie1);
 const kapitel4 = new Kapitel("Grundlagen", "Grundlegende Konzepte erklärt", "00:15");
 const kapitel5 = new Kapitel("Fortgeschrittene Themen", "Tiefe Einblicke in komplexe Themen", "00:25");
 
-const tutorial2 = new Tutorial("React für Anfänger", "DE", "Ein umfassendes Tutorial für React-Einsteiger ...", new Date(2021, 5, 15), "https://react-tutorial.de");
+const tutorial2 = new Tutorial("React für Anfänger", "DE", "Ein umfassendes Tutorial für React-Einsteiger ...", new Date(2021, 5, 15), "https://react-tutorial.de", "/Mathe/Mathe1Tutorial1.html", "/img/BinomischeFormelnVideo.mp4");
 tutorial2.fuegeKapitelHinzu(kapitel4);
 tutorial2.fuegeKapitelHinzu(kapitel5);
 tutorial2.fuegeKategorieHinzu(kategorie2);

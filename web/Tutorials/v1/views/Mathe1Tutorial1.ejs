@@ -17,22 +17,23 @@
 
         <div id="container">
             <main>
-                <p><strong>Binomische Formeln</strong><br></p>
+                <p><strong><%= tutorial.name %></strong><br></p>
                 <div>
                     <div class="informationen">
-                        <p>Datum: 15.10.2024</p>
-                        <p>Dauer: 04:03 Minuten</p>
+                        <p>Datum: <%= tutorial.datum.toLocaleDateString("de-DE") %></p>
+                        <p>Dauer: <%= tutorial.dauer %></p>
                     </div>
                     <div class="informationen">
                         <figure>
-                            <img src="/img/Mathe1TutorialBild.png" alt="Bild konnte nicht geladen werden!" style="width: 35%">
-                            <figcaption>Bildbeschreibung</figcaption>
+                            <img src="<%= tutorial.kategorien[0]?.bild.url %>"
+                                 alt="<%= tutorial.kategorien[0]?.bild.name %>"
+                                 style="width: 20%">
+                            <figcaption><%= tutorial.kategorien[0]?.bild.name %></figcaption>
                         </figure>
                     </div>
                 </div>
-                
                 <video controls>
-                    <source src="/img/BinomischeFormelnVideo.mp4" type="video/mp4">
+                    <source src="<%= tutorial.videoUrl %>" type="video/mp4">
                     Videoausschnitt konnte nicht angezeigt werden
                 </video>
                 <table>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   
   <head>
@@ -19,37 +18,24 @@
 
     <div  class="grid-container">
     <main>
-      <section>    <dl>
-      <figure>
-        <img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="75" width="75">
-      </figure>
-        <dt><strong>Mathe Tutorial 1</strong></dt>
-        <dd>
-          <p>
-            Titel: <small><a href="Mathe/Mathe1Tutorial1.html">Binomische Formeln</a></small><br>
-            Datum: <small>15.10.2024</small><br>
-            Dauer: <small>04:03 Minuten</small><br>
-            Beschreibung: <small>Das ist eine Beschreibung <br> für das Mathe 1 Turotial 1!</small><br>
-          </p>
-        </dd>
-      </dl>
-    </section>
-    <section>
-      <dl>
-        <figure>
-          <img src="/img/MathLogo.png" alt="Tutorial 1 Logo" height="75" width="75">
-        </figure>
-        <dt><strong>Mathe Tutorial 2</strong></dt>
-        <dd>
-          <p>
-            Titel: <small><a href="Mathe/Mathe1Tutorial1.html">Titel 2</a></small><br>
-            Datum: <small>08.10.2024</small><br>
-            Dauer: <small>13:24 Minuten</small><br>
-            Beschreibung: <small>Das ist eine Beschreibung <br> für das Mathe 1 Tutorial 2!</small><br>
-          </p>
-        </dd>
-      </dl>
-    </section>
+      <% tutorials.forEach(tutorial => { %>
+        <section>
+          <dl>
+            <figure>
+              <img src="<%= tutorial.kategorien[0].bild.url %>" alt="<%= tutorial.kategorien[0].bild.name %>" height="75" width="75">
+            </figure>
+            <dt><strong><%= tutorial.name %></strong></dt>
+            <dd>
+              <p>
+                Titel: <small><a href=" <%= tutorial.tutorialUrl + '/' + encodeURIComponent(tutorial.name) %> "><%= tutorial.name %></a></small><br>
+                Datum: <small><%= tutorial.datum.toLocaleDateString() %></small><br>
+                Dauer: <small><%= tutorial.kapitelliste.map(kap => kap.dauer).join(", ") %></small><br>
+                Beschreibung: <small><%= tutorial.beschreibung %></small><br>
+              </p>
+            </dd>
+          </dl>
+        </section>
+      <% }); %>
     </main>
       <%- include('partials/aside') %>
 
